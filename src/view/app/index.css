@@ -1,0 +1,54 @@
+.App {
+  width: 720px;
+  margin: 120px auto;
+  position: relative;
+}
+.App .title{
+  font-weight: normal;
+  font-size: 40px;
+  margin-bottom: 60px;
+}
+.list-title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #0366d6;
+  cursor: pointer;
+}
+.list-title:hover {
+  text-decoration: underline;
+}
+.list-item{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.App .input-item{
+  margin-bottom: 20px;
+}
+p, a{
+  text-align: left;
+  width: 100%;
+}
+input {
+  font-size: 20px;
+}
+.spin-wrap{
+  width: 720px;
+  display: flex;
+  justify-content: center;
+}
+.historoy-wrap{
+  position: absolute;
+  width: 720px;
+  top: 148px;
+  background: #fff;
+  z-index: 100;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+}
+.history-item{
+  width: 100%;
+}
+.ant-empty-description{
+  text-align: center;
+}

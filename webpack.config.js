@@ -1,6 +1,6 @@
 const { join } = require("path")
-const webpack = require("webpack");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: "development",
@@ -21,20 +21,15 @@ module.exports = {
         loader: ['babel-loader'],
       },
       {
-        test: /\.scss$/,
+        test: /\.(sc|sa|c)ss$/,
         use: [
           "style-loader",
           "css-loader",
           "postcss-loader",
           "sass-loader"
-        ]
+        ],
       },
-      {
-        test: /\.css$/,
-        use: [
-          "css-loader",
-        ]
-      },
+
       {
         test: /\.(png|jpg|jpeg|gif|svg)/,
         use: {
