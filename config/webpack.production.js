@@ -8,6 +8,10 @@ module.exports = {
   output: {
     filename: "scripts/[name].[contenthash:5].bundule.js"
   },
+  externals: {
+    react: "React",
+    antd: 'antd'
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new OptimizeCSSAssetsPlugin({
@@ -46,6 +50,13 @@ module.exports = {
         removeComments: true,
         collapseWhitespace: true,
         removeAttributeQuotes: true
+      },
+      cdn: {
+        js: [
+          'https://unpkg.com/react@16/umd/react.production.min.js',
+          "https://unpkg.com/react-dom@16/umd/react-dom.production.min.js",
+          "https://unpkg.com/antd@4.6.6/dist/antd.min.js"
+        ]
       }
     })
   ]

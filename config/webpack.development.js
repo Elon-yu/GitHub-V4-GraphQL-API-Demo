@@ -5,6 +5,7 @@ module.exports = {
   output: {
     filename: "scripts/[name].bundule.js"
   },
+  devtool: 'source-map',
   devServer: {
     historyApiFallback: true,
     contentBase: join(__dirname, "../dist"),
@@ -14,6 +15,7 @@ module.exports = {
     port: 3000,
     hot: true,
   },
+  
   plugins: [
     new HtmlWebpackPlugin({
       title: 'github-keyword-query',

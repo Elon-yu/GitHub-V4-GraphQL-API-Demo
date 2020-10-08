@@ -5,7 +5,7 @@ import { AppContainer } from "react-hot-loader";
 import { ApolloProvider } from 'react-apollo'
 import { client } from './libs/client'
 import App from './view/app'
-import 'antd/dist/antd.css';
+// import 'antd/dist/antd.css';
 const render = () => {
   return ReactDOM.render(
     <ApolloProvider client={client}>
@@ -15,9 +15,6 @@ const render = () => {
       </ApolloProvider>,
     document.getElementById("root")
   );
-}
-if (module.hot) {
-  module.hot.accept();
 }
 render()
 

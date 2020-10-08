@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { Typography } from 'antd';
+import { hot } from 'react-hot-loader';
 import ListView from './list'
 import SearchView from './search'
 import './index.css'
-export default () => {
+const App =  () => {
   const [subKeyword, setSubKeyword] = useState('')
   return (
     <div className="App">
@@ -13,4 +14,5 @@ export default () => {
     </div>
   );
 }
+export default hot(module)(App);
 

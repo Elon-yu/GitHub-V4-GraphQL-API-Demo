@@ -2,6 +2,7 @@ const { join, resolve } = require("path")
 const {merge} = require("webpack-merge");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ProgressBarPlugin = require("progress-bar-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 const _mode = process.env.NODE_ENV || 'development'
 const _modeflag = _mode == "production" ? true : false;
 const _mergeConfig = require(`./config/webpack.${_mode}.js`);
@@ -13,7 +14,7 @@ const webpackBaseConfig= {
   },
   output: {
     path: join(__dirname, "./dist/assets"),
-    publicPath: "/"
+    publicPath: ""
   },
   module: {
     rules: [
@@ -24,15 +25,14 @@ const webpackBaseConfig= {
         loader: "babel-loader"
       },
       {
+        test: /\.(js|jsx)$/,
+        use: 'react-hot-loader/webpack',
+        include: /node_modules/
+      },
+      {
         test: /\.(sc|c)ss$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: !_modeflag,
-              reloadAll: true,
-            },
-          },
+           MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: {
@@ -69,14 +69,13 @@ const webpackBaseConfig= {
       }
     ]
   },
-  externals: {
-    react: "React",
-  },
+ 
   optimization: {
     minimize: _modeflag ? true : false,
     runtimeChunk: {
       name: "runtime"
     },
+    minimizer: [new TerserPlugin({extractComments: false})],
     splitChunks: {
       chunks: "async",
       minSize: 30000,
@@ -84,6 +83,7 @@ const webpackBaseConfig= {
       maxAsyncRequests: 5,
       maxInitialRequests: 3,
       name: false,
+      automaticNameDelimiter: '~',
       cacheGroups: {
         commons: {
           chunks: "initial",
@@ -108,11 +108,11 @@ const webpackBaseConfig= {
     new ProgressBarPlugin(),
     new MiniCssExtractPlugin({
       filename: _modeflag
-        ? "styles/[name].[contenthash:5].css"
-        : "styles/[name].css",
+        ? "./styles/[name].[contenthash:5].css"
+        : "./styles/[name].css",
       chunkFilename: _modeflag
-        ? "styles/[name].[contenthash:5].css"
-        : "styles/[name].css"
+        ? "./styles/[name].[contenthash:5].css"
+        : "./styles/[name].css"
     })
   ],
 }

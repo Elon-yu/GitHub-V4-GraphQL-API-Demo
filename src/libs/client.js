@@ -8,7 +8,7 @@ const GITHUB_BASE_URL = 'https://api.github.com/graphql';
 const httpLink = new HttpLink({
   uri: GITHUB_BASE_URL,
   headers: {
-    authorization: `bearer 4f958e2df9a8344fa26cf28c0e11645e9539c3fa`,
+    authorization: `bearer 675249adcc600eb0ad4ae13b0f0956ddcc606e54`,
   },
 });
 
