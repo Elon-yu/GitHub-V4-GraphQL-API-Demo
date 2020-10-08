@@ -13,7 +13,7 @@ export default ({ keyword }) => {
     {
       ({ loading, error, data }) => {
         if (loading) return <div className="spin-wrap"> <Spin size="large" /></div>
-        if (error) return <Alert message={error} type="error" showIcon />
+        if (error) return <Alert message={error.message} type="error" showIcon />
         const { edges } = data.search;
         return <List
           loading={loading}
