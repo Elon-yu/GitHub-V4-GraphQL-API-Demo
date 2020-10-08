@@ -3,6 +3,7 @@ const {merge} = require("webpack-merge");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ProgressBarPlugin = require("progress-bar-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const threadLoader = require('thread-loader');
 const _mode = process.env.NODE_ENV || 'development'
 const _modeflag = _mode == "production" ? true : false;
 const _mergeConfig = require(`./config/webpack.${_mode}.js`);
@@ -22,7 +23,16 @@ const webpackBaseConfig= {
         test: /\.(js|jsx)$/,
         include: [resolve("src")],
         exclude: /node_modules/,
-        loader: "babel-loader"
+        use: [
+          {
+            loader: 'thread-loader',
+            options: {
+              workers: 2,
+              poolTimeout: 2000
+            }
+          },
+          'babel-loader'
+        ]
       },
       {
         test: /\.(js|jsx)$/,
@@ -33,6 +43,13 @@ const webpackBaseConfig= {
         test: /\.(sc|c)ss$/,
         use: [
            MiniCssExtractPlugin.loader,
+           {
+            loader: 'thread-loader',
+            options: {
+              workerParallelJobs: 2,
+              poolTimeout: 2000
+            }
+          },
           {
             loader: "css-loader",
             options: {
