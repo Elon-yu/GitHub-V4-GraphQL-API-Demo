@@ -84,7 +84,7 @@ const webpackBaseConfig = {
     runtimeChunk: {
       name: "runtime"
     },
-    minimizer: [new TerserPlugin({ extractComments: false })],
+    minimizer: [new TerserPlugin({ extractComments: false, parallel: true  })],
     splitChunks: {
       chunks: "async",
       minSize: 30000,
