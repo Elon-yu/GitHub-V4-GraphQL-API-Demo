@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Input, List } from 'antd';
-import { useDebounce } from '../../../utils'
+import { useDebounce } from '@utils'
 
 export default ({ setSubKeyword }) => {
   const [showKeyword, setShowKeyword] = useState('')

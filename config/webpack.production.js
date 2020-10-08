@@ -55,7 +55,7 @@ module.exports = {
         js: [
           'https://unpkg.com/react@16/umd/react.production.min.js',
           "https://unpkg.com/react-dom@16/umd/react-dom.production.min.js",
-          "https://unpkg.com/antd@4.6.6/dist/antd.min.js"
+          "https://unpkg.com/antd@4.6.6/dist/antd.min.js",
         ]
       }
     })

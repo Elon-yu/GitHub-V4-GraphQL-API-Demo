@@ -1,14 +1,13 @@
 const { join, resolve } = require("path")
-const {merge} = require("webpack-merge");
+const { merge } = require("webpack-merge");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ProgressBarPlugin = require("progress-bar-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-const threadLoader = require('thread-loader');
 const _mode = process.env.NODE_ENV || 'development'
 const _modeflag = _mode == "production" ? true : false;
 const _mergeConfig = require(`./config/webpack.${_mode}.js`);
 
-const webpackBaseConfig= {
+const webpackBaseConfig = {
   mode: _mode,
   entry: {
     app: resolve("src/index.js")
@@ -42,14 +41,7 @@ const webpackBaseConfig= {
       {
         test: /\.(sc|c)ss$/,
         use: [
-           MiniCssExtractPlugin.loader,
-           {
-            loader: 'thread-loader',
-            options: {
-              workerParallelJobs: 2,
-              poolTimeout: 2000
-            }
-          },
+          MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: {
@@ -86,13 +78,13 @@ const webpackBaseConfig= {
       }
     ]
   },
- 
+
   optimization: {
     minimize: _modeflag ? true : false,
     runtimeChunk: {
       name: "runtime"
     },
-    minimizer: [new TerserPlugin({extractComments: false})],
+    minimizer: [new TerserPlugin({ extractComments: false })],
     splitChunks: {
       chunks: "async",
       minSize: 30000,
