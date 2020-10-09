@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 module.exports = {
   output: {
     filename: "scripts/[name].[contenthash:5].bundule.js"
@@ -14,7 +13,6 @@ module.exports = {
     antd: 'antd'
   },
   plugins: [
-    new BundleAnalyzerPlugin(),
     new CleanWebpackPlugin(),
     new OptimizeCSSAssetsPlugin({
       assetNameRegExp: /\.css$/g,
