@@ -19,8 +19,7 @@ const webpackBaseConfig = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        include: [resolve("src")],
-        exclude: /node_modules/,
+        include: [resolve(__dirname, 'src')],
         use: [
           // 项目太小反而变慢了
           // {
