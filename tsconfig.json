@@ -23,6 +23,9 @@
       "@libs": [
         "./src/libs/index.js"
       ],
+      "@config": [
+        "./src/config/index.js"
+      ],
     }
   }
 }

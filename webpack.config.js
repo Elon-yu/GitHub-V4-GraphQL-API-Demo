@@ -5,7 +5,7 @@ const ProgressBarPlugin = require("progress-bar-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const _mode = process.env.NODE_ENV || 'development'
 const _modeflag = _mode == "production" ? true : false;
-const _mergeConfig = require(`./config/webpack.${_mode}.js`);
+const _mergeConfig = require(`./build/webpack.${_mode}.js`);
 
 const webpackBaseConfig = {
   mode: _mode,
@@ -109,6 +109,7 @@ const webpackBaseConfig = {
       "@utils": resolve("src/utils"),
       "@services": resolve("src/services"),
       "@libs": resolve("src/libs"),
+      "@config": resolve("src/config"),
     },
     modules: ["node_modules", resolve("src")],
     extensions: [".js", "jsx"]
