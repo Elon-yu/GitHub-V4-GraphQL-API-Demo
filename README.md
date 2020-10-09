@@ -1,6 +1,6 @@
 # GitHub-V4-GraphQL-API-demo
 
-react + react-apollo 使用 GitHub V4 GraphQL API 查询github关b键字的demo
+react + react-apollo 使用 GitHub V4 GraphQL API 查询github关键字的demo
 
 ## 安装
 
