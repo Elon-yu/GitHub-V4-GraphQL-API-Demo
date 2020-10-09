@@ -6,7 +6,6 @@ const TerserPlugin = require("terser-webpack-plugin");
 const _mode = process.env.NODE_ENV || 'development'
 const _modeflag = _mode == "production" ? true : false;
 const _mergeConfig = require(`./build/webpack.${_mode}.js`);
-
 const webpackBaseConfig = {
   mode: _mode,
   entry: {
@@ -23,13 +22,14 @@ const webpackBaseConfig = {
         include: [resolve("src")],
         exclude: /node_modules/,
         use: [
-          {
-            loader: 'thread-loader',
-            options: {
-              workers: 2,
-              poolTimeout: 2000
-            }
-          },
+          // 项目太小反而变慢了
+          // {
+          //   loader: 'thread-loader',
+          //   options: {
+          //     workers: 2,
+          //     poolTimeout: 2000
+          //   }
+          // },
           'babel-loader'
         ]
       },
