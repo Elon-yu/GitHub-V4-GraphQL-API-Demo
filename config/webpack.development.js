@@ -1,6 +1,7 @@
 const { join,resolve } = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const FriendlyErrorsPlugin = require("friendly-errors-webpack-plugin");
+console.log("🥭🥭🥭: process.env", process.env);
 module.exports = {
   output: {
     filename: "scripts/[name].bundule.js"
