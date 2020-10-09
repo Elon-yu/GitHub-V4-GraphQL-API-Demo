@@ -17,7 +17,7 @@ module.exports = {
   
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'github-keyword-query',
+      title: 'GitHub-V4-GraphQL-API-demo',
       filename: 'index.html',
       template: resolve(__dirname, '../src/layout.html')
     }),

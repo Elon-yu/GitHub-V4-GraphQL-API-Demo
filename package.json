@@ -1,5 +1,5 @@
 {
-  "name": "github-keyword-query",
+  "name": "GitHub-V4-GraphQL-API-demo",
   "version": "1.0.0",
   "description": "使用GraphQL API v4 + apollo 查询github关键字",
   "main": "index.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Elon-yu/github-keyword-query.git"
+    "url": "git+https://github.com/Elon-yu/GitHub-V4-GraphQL-API-demo.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Elon-yu/github-keyword-query/issues"
+    "url": "https://github.com/Elon-yu/GitHub-V4-GraphQL-API-demo/issues"
   },
-  "homepage": "https://github.com/Elon-yu/github-keyword-query#readme",
+  "homepage": "https://github.com/Elon-yu/GitHub-V4-GraphQL-API-demo#readme",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-transform-runtime": "^7.11.5",
