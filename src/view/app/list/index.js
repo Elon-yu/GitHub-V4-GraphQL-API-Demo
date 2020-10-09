@@ -1,7 +1,7 @@
 import React from 'react'
 import { Query } from "react-apollo";
 import { List, Spin, Alert } from 'antd';
-import { GET_REPOSITORIES_OF_KEYWORD } from '@services/api-gql'
+import { GET_REPOSITORIES_OF_KEYWORD } from '@services'
 
 export default ({ keyword }) => {
   return <Query
