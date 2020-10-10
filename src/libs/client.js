@@ -3,8 +3,7 @@ import { ApolloClient } from 'apollo-client';
 import { ApolloLink } from 'apollo-link';
 import { onError } from 'apollo-link-error';
 import { InMemoryCache } from 'apollo-cache-inmemory';
-import { GITHUB_ACCESS_TOKEN } from '@config';
-const GITHUB_BASE_URL = 'https://api.github.com/graphql';
+import { GITHUB_ACCESS_TOKEN, GITHUB_BASE_URL } from '@config';
 const httpLink = new HttpLink({
   uri: GITHUB_BASE_URL,
   headers: {

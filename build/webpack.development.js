@@ -17,7 +17,7 @@ module.exports = {
   
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'GitHub-V4-GraphQL-API-demo',
+      title: 'GitHub-V4-GraphQL-API-Demo',
       filename: 'index.html',
       template: resolve(__dirname, '../src/layout.html')
     }),
